@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Flight overview{% endblock %}
+{% block header %}Flight overview{% endblock %}
+{% block body %}
+    <ul class="demo-list-icon mdl-list">
+        {% for airport in airports %}
+            <a class="mdl-list__item mdl-list__item--two-line" href="{{ path('airport', {'airportCode': airport.attributes.code}) }}">
+                <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-avatar">local airport</i>
+                    <span>{{ airport.attributes.code }}</span>
+                    <span class="mdl-list__item-sub-title">{{ airport.attributes.name }}</span>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

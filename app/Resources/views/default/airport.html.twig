@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Flight overview{% endblock %}
+{% block header %}Flight overview{% endblock %}
+{% block body %}
+    <ul class="demo-list-icon mdl-list">
+        {% for flight in flights %}
+            <li class="mdl-list__item mdl-list__item--two-line">
+                <span class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-avatar">person</i>
+                    <span>{{ flight.airline }} - {{ flight.flight_id }}</span>
+                    <span class="mdl-list__item-sub-title">New time {{ flight.newTime }}</span>
+                </span>
+        {% endfor %}
+    </ul>
+{% endblock %}
