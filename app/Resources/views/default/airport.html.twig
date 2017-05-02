@@ -5,12 +5,17 @@
 {% block body %}
     <ul class="demo-list-icon mdl-list">
         {% for flight in flights %}
-            <li class="mdl-list__item mdl-list__item--two-line">
+            <li class="mdl-list__item mdl-list__item--two-line can-filter">
                 <span class="mdl-list__item-primary-content">
-                    <i class="material-icons mdl-list__item-avatar">person</i>
+                    <i class="material-icons mdl-list__item-avatar">local_airport</i>
                     <span>{{ flight.airline }} - {{ flight.flight_id }}</span>
                     <span class="mdl-list__item-sub-title">New time {{ flight.newTime }}</span>
                 </span>
+            </li>
+        {% else %}
+            <li>
+                There are no flights to display
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

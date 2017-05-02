@@ -5,12 +5,12 @@
 {% block body %}
     <ul class="demo-list-icon mdl-list">
         {% for airport in airports %}
-            <a class="mdl-list__item mdl-list__item--two-line" href="{{ path('airport', {'airportCode': airport.attributes.code}) }}">
-                <span class="mdl-list__item-primary-content">
-                    <i class="material-icons mdl-list__item-avatar">local airport</i>
+            <li class="mdl-list__item mdl-list__item--two-line can-filter" data-airport-code="{{ airport.attributes.code }}" data-airport-name="{{ airport.attributes.name }}">
+                <a href="{{ path('airport', {'airportCode': airport.attributes.code}) }}" class="mdl-list__item-primary-content">
+                    <i class="material-icons mdl-list__item-avatar">local_airport</i>
                     <span>{{ airport.attributes.code }}</span>
                     <span class="mdl-list__item-sub-title">{{ airport.attributes.name }}</span>
-                </span>
+                </a>
             </li>
         {% endfor %}
     </ul>
